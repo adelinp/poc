@@ -4,3 +4,4 @@ terraform.tfstate.backup
 .terraform.lock.hcl
 *.tfvars
 lambda.zip
+.terraform.tfstate.lock.info
