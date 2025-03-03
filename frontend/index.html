@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3-Tier POC</title>
+</head>
+<body>
+    <h1>i2b.ro POC</h1>
+    <button onclick="fetchHello()">Get Message from API</button>
+    <p id="message"></p>
+
+    <script>
+        async function fetchHello() {
+            const response = await fetch("API_GATEWAY_URL/hello");
+            const data = await response.text();
+            document.getElementById("message").innerText = data;
+        }
+    </script>
+</body>
+</html>
