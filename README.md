@@ -91,7 +91,7 @@ Terraform modules are created by:
 2. **Declaring input variables** in `variables.tf`
 3. **Defining outputs** in `outputs.tf`
 
-Example **Lambda Module (**\`\`**)**:
+Example **Lambda Module**:
 
 ```hcl
 resource "aws_lambda_function" "backend" {
