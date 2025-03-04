@@ -82,7 +82,6 @@ This project is structured using Terraform modules for easy reusability:
 | `apigateway`| Configures API Gateway for HTTP requests |
 | `rds`       | Creates an RDS MySQL database |
 
----
 ### **How Modules are Created**
 
 Terraform modules are created by:
