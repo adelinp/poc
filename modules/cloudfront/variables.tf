@@ -1,4 +1,4 @@
-variable "s3_website_endpoint" {
-  description = "S3 website endpoint for CloudFront"
+variable "s3_bucket_domain_name" {
+  description = "The domain name of the S3 bucket"
   type        = string
 }

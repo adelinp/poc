@@ -6,7 +6,7 @@ resource "aws_cloudfront_origin_access_identity" "oai" {
 # Create the CloudFront distribution
 resource "aws_cloudfront_distribution" "cdn" {
   origin {
-    domain_name = var.s3_website_endpoint
+    domain_name = var.s3_bucket_domain_name
     origin_id   = "S3Origin"
 
     s3_origin_config {
@@ -21,7 +21,12 @@ resource "aws_cloudfront_distribution" "cdn" {
     allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
     target_origin_id = "S3Origin"
-
+    forwarded_values {  
+      query_string = false
+      cookies {
+        forward = "none"
+      }
+    }
     viewer_protocol_policy = "redirect-to-https"
   }
 

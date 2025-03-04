@@ -14,10 +14,8 @@ module "s3" {
 
 module "cloudfront" {
   source               = "./modules/cloudfront"
-  s3_website_endpoint  = module.s3.s3_website_endpoint
-}
-
-
+  s3_bucket_domain_name = module.s3.s3_bucket_domain_name
+  }
 
 module "lambda" {
   source        = "./modules/lambda"
