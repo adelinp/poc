@@ -7,17 +7,20 @@ Each module is self-contained, with its own variables, outputs, and resources, e
 ---
 
 ## **Table of Contents**
-1. [File Structure](#file-structure)
-2. [Modules](#modules)
-3. [Architecture Diagram](#architecture-diagram)
-4. [How to Deploy](#-how-to-deploy)
-   - [Prerequisites](#prerequisites)
-   - [Deploy the Infrastructure](#deploy-the-infrastructure)
-   - [Retrieve CloudFront URL](#retrieve-cloudfront-url)
-5. [Scalability Features](#-scalability-features)
-6. [Cleanup](#-cleanup)
-7. [Conclusion](#-conclusion)
-9. [References](#-references)
+- [3-Tier Scalable Application Deployment Using Terraform](#3-tier-scalable-application-deployment-using-terraform)
+  - [**Table of Contents**](#table-of-contents)
+  - [**File Structure**](#file-structure)
+  - [**Modules**](#modules)
+    - [**How modules are used**](#how-modules-are-used)
+  - [**Architecture Diagram**](#architecture-diagram)
+  - [**How to Deploy**](#how-to-deploy)
+    - [**Prerequisites**](#prerequisites)
+    - [**Deploy the Infrastructure**](#deploy-the-infrastructure)
+    - [**Retrieve CloudFront URL**](#retrieve-cloudfront-url)
+  - [**Scalability Features**](#scalability-features)
+  - [**Cleanup**](#cleanup)
+  - [**Conclusion**](#conclusion)
+  - [**References**](#references)
 
 ---
 ## **File Structure**
@@ -82,7 +85,7 @@ This project is structured using Terraform modules for easy reusability:
 | `apigateway`| Configures API Gateway for HTTP requests |
 | `rds`       | Creates an RDS MySQL database |
 
-### **How Modules are Created**
+### **How modules are used**
 
 Terraform modules are created by:
 
