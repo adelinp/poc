@@ -8,9 +8,9 @@ This project demonstrates how to deploy a scalable 3-tier application using **Te
 1. [Modules](#-modules)
 2. [Architecture Diagram](#architecture-diagram)
 2. [How to Deploy](#-how-to-deploy)
-   - [Prerequisites](#1%EF%B8%8F⃣-prerequisites)
-   - [Deploy the Infrastructure](#2%EF%B8%8F⃣-deploy-the-infrastructure)
-   - [Retrieve CloudFront URL](#3%EF%B8%8F⃣-retrieve-cloudfront-url)
+   - [Prerequisites](#prerequisites)
+   - [Deploy the Infrastructure](#deploy-the-infrastructure)
+   - [Retrieve CloudFront URL](#retrieve-cloudfront-url)
 3. [Scalability Features](#-scalability-features)
 4. [Cleanup](#-cleanup)
 5. [Conclusion](#-conclusion)
@@ -39,7 +39,7 @@ This project is structured using Terraform modules for easy reusability:
 
 ---
 
-## ** How to Deploy**
+## **How to Deploy**
 ### **Prerequisites**
 - Install **Terraform** (>= v1.0)
 - AWS CLI configured with credentials
@@ -83,7 +83,7 @@ This project demonstrates **how to deploy a scalable cloud application using Ter
 
 ---
 
-## ** References**
+## **References**
 - [Terraform Documentation](https://developer.hashicorp.com/terraform/docs)
 - [AWS CloudFront](https://aws.amazon.com/cloudfront/)
 - [AWS Lambda](https://aws.amazon.com/lambda/)
