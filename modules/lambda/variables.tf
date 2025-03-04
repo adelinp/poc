@@ -48,3 +48,7 @@ variable "db_password" {
   type        = string
   sensitive   = true
 }
+variable "rds_vpc_endpoint" {
+  description = "VPC Endpoint ID for RDS"
+  type        = string
+}

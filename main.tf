@@ -1,5 +1,7 @@
 module "vpc" {
   source = "./modules/vpc"
+  aws_region        = var.aws_region
+  private_subnet_ids = module.vpc.private_subnet_ids
 }
 
 module "iam" {
@@ -33,6 +35,7 @@ module "lambda" {
   db_endpoint   = module.rds.db_endpoint
   db_username   = module.rds.db_username
   db_password   = module.rds.db_password
+  rds_vpc_endpoint  = module.vpc.rds_vpc_endpoint_id
 }
 
 module "apigateway" {

@@ -31,3 +31,23 @@ resource "aws_security_group" "rds_sg" {
   }
 }
 
+
+resource "aws_vpc_endpoint" "rds" {
+  vpc_id            = aws_vpc.main.id
+  service_name      = "com.amazonaws.${var.aws_region}.rds"
+  vpc_endpoint_type = "Interface"
+  subnet_ids        = var.private_subnet_ids
+  security_group_ids = [aws_security_group.lambda_sg.id]
+
+  private_dns_enabled = true
+}
+resource "aws_security_group_rule" "allow_lambda_egress" {
+  type        = "egress"
+  from_port   = 0
+  to_port     = 0
+  protocol    = "-1" # Allow all protocols
+  security_group_id = aws_security_group.lambda_sg.id
+  cidr_blocks = ["0.0.0.0/0"]
+  description = "Allow Lambda outbound traffic"
+}
+
