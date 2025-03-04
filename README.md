@@ -139,9 +139,6 @@ output "lambda_arn" {
 }
 ```
 
-###How Modules are Used###
-Modules are used at the root level.
-
 Example usage of the **Lambda module**:
 
 ```hcl
