@@ -16,3 +16,4 @@ output "frontend_url" {
   description = "CloudFront distribution URL"
   value       = aws_cloudfront_distribution.cdn.domain_name
 }
+

@@ -11,4 +11,28 @@ resource "aws_iam_role" "lambda_role" {
   })
 }
 
+resource "aws_iam_policy" "lambda_vpc_access" {
+  name        = "LambdaVPCAccessPolicy"
+  description = "Allows Lambda to create network interfaces in VPC"
+  
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "ec2:CreateNetworkInterface",
+          "ec2:DescribeNetworkInterfaces",
+          "ec2:DeleteNetworkInterface"
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "lambda_vpc_access_attach" {
+  policy_arn = aws_iam_policy.lambda_vpc_access.arn
+  role       = aws_iam_role.lambda_role.name
+}
 
