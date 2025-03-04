@@ -8,7 +8,7 @@ Each module is self-contained, with its own variables, outputs, and resources, e
 
 ## **Table of Contents**
 1. [File Structure](#file-structure)
-2. [How Modules are Created](#file-structure)
+2. [Modules](#modules)
 3. [Architecture Diagram](#architecture-diagram)
 4. [How to Deploy](#-how-to-deploy)
    - [Prerequisites](#prerequisites)
