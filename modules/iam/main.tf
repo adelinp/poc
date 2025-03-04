@@ -36,3 +36,11 @@ resource "aws_iam_role_policy_attachment" "lambda_vpc_access_attach" {
   role       = aws_iam_role.lambda_role.name
 }
 
+resource "aws_lambda_permission" "apigateway" {
+  statement_id  = "AllowExecutionFromAPIGateway"
+  action        = "lambda:InvokeFunction"
+  function_name = var.lambda_arn
+  principal     = "apigateway.amazonaws.com"
+
+  source_arn = "arn:aws:execute-api:${var.aws_region}:${var.aws_account_id}:${var.apigateway_api_id}/*"
+}

@@ -4,6 +4,10 @@ module "vpc" {
 
 module "iam" {
   source = "./modules/iam"
+  lambda_arn       = module.lambda.lambda_arn
+  apigateway_api_id = module.apigateway.api_id
+  aws_region        = var.aws_region
+  aws_account_id    = var.aws_account_id
 }
 
 module "s3" {
@@ -35,6 +39,7 @@ module "apigateway" {
   source     = "./modules/apigateway"
   api_name   = "3tier-api"
   lambda_arn = module.lambda.lambda_arn
+  aws_region = var.aws_region
 }
 
 module "rds" {
