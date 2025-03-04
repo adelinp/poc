@@ -35,13 +35,7 @@ This project is structured using Terraform modules for easy reusability:
 
 ## **Architecture Diagram**
 
-graph TD;
-    User -->|Requests Website| CloudFront
-    CloudFront -->|Serves Static Content| S3["S3 Static Website"]
-    CloudFront -->|API Request| API_Gateway
-    API_Gateway -->|Invoke Backend Logic| Lambda
-    Lambda -->|Read/Write Data| RDS["Amazon RDS (MySQL)"]
-    Lambda -->|Communicate Securely| Private_Subnet["Private Subnet in VPC"]
+![Architecture Diagram](https://www.plantuml.com/plantuml/png/RP91Ru9048NlyokcdEp1zE2jXqQBiJ6nZPMqdaUO8X5swUwWiOt_lSCI337bG63UDs_dJNRgXPmqLGbtikUAaKv-R1sPd07yeJ0rEQgmB0pBkMQqJlOMm74gofICqT88ErKZ_0NKXrAn3gCFpov2yjZe1rm0QaeFb6l3R9jWNDecwpl2Q-0On8MpHd0Kpz_kWqtQ5h_QuYsUJ30HaYB5BUzy8HnuFu40Ne_zNCVzWJS6i_KINqZuHEVGIdMHTx__qIkgTXdXeZ6f5DQ4ZZBKhdH6GZlohNL5FzRWPfxWwFMSlA-wC2xp0RwqYsaNXEFnqo0YFkA6lnlsuljGC50LrdmA9UoExFluiMfi15HIOX13IStOMy90QBbkU6MMvcWFZC-wCJOPhcnUfD2f0TIfms2KFMoTZeHp4WAOAjnUe3y0)
 
 ---
 
